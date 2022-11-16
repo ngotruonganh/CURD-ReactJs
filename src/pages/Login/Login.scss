@@ -1,0 +1,218 @@
+.LoginPape {
+      display: flex;
+      justify-content: center;
+      // &.hide:not(.modal) {
+      //       opacity: 0.5;
+      // }
+      .left-content {
+            padding: 30px 80px;
+            .logo {
+                  margin-bottom: 100px;
+            }
+            .sign-in {
+                  &-form {
+                        h1 {
+                              font-size: 30px;
+                        }
+                        p {
+                              color: #78778b;
+                              margin-bottom: 5px;
+                        }
+                        .input-field {
+                              margin-top: 25px;
+                              p {
+                                    font-size: 16px;
+                                    color: black;
+                              }
+                              input {
+                                    padding-left: 20px;
+                                    width: 100%;
+                                    height: 48px;
+                                    border: 1px solid #463f3f;
+                                    border-radius: 10px;
+                              }
+                        }
+                        .forget-pass {
+                              display: inline-block;
+                              margin: 15px 0;
+                              text-decoration: none;
+                              color: black;
+
+                              &:hover {
+                                    cursor: pointer;
+                                    text-decoration: underline;
+                              }
+                        }
+
+                        .btn-log-in {
+                              text-decoration: none;
+                              display: flex;
+                              justify-content: center;
+                              align-items: center;
+                              width: 424px;
+                              height: 48px;
+                              background-color: #c8ee44;
+                              border-radius: 10px;
+                              font-weight: 600;
+                              border: none;
+                              color: #1b212d;
+                              &:hover {
+                                    background-color: #b1d824;
+                                    cursor: pointer;
+                              }
+                        }
+                        .sign-up-link {
+                              margin-top: 20px;
+                              display: flex;
+                              justify-content: center;
+                              color: #78778b;
+                              a {
+                                    text-decoration: none;
+                                    color: black;
+                                    font-weight: 500;
+                                    &:hover {
+                                          text-decoration: underline;
+                                    }
+                              }
+                        }
+                  }
+            }
+            .modal {
+                  position: fixed;
+                  // top: 10%;
+                  // left: 50%;
+                  // transform: translateX(-50%);
+                  // background-color: white;
+                  // border-radius: 10px;
+                  // animation: showModal linear 0.2s;
+                  top: 0;
+                  bottom: 0;
+                  left: 0;
+                  right: 0;
+                  animation: showModal linear 0.2s;
+
+                  .overlay {
+                        position: absolute;
+                        width: 100%;
+                        height: 100%;
+                        opacity: 0.5;
+                        background-color: #78778b;
+                        z-index: 2;
+                  }
+                  form {
+                        position: relative;
+                        width: 400px;
+                        height: 300px;
+                        border-radius: 10px;
+                        background-color: white;
+                        animation: showModal linear 0.2s;
+                        background-color: rgb(255, 255, 255);
+                        border-radius: 10px;
+                        text-align: center;
+                        margin: 50px auto;
+                        padding: 40px 20px;
+                        z-index: 3;
+
+                        h1 {
+                              text-align: left;
+                              font-size: 20px;
+                        }
+                        .input-field {
+                              margin: 0 auto;
+                              text-align: left;
+                              p {
+                                    font-size: 14px;
+                                    color: #78778b;
+                                    margin: 10px 0;
+                              }
+                              input {
+                                    width: 100%;
+                                    height: 40px;
+                                    border: 1px solid #463f3f;
+                                    border-radius: 10px;
+                                    color: black;
+                              }
+                        }
+                        .getpass {
+                              margin-top: 20px;
+                              display: flex;
+                              justify-content: center;
+                              align-items: center;
+                              width: 100%;
+                              height: 40px;
+                              background: #c8ee44;
+                              border-radius: 10px;
+                              font-weight: 600;
+                              border: none;
+                              &:hover {
+                                    background: #b1d824;
+                                    cursor: pointer;
+                              }
+                        }
+                        button {
+                              display: flex;
+                              justify-content: center;
+                              align-items: center;
+                              width: 424px;
+                              height: 48px;
+                              background: #c8ee44;
+                              border-radius: 10px;
+                              font-weight: 600;
+                              border: none;
+                              &:hover {
+                                    background: #b1d824;
+                                    cursor: pointer;
+                              }
+                        }
+                        .options {
+                              display: flex;
+                              justify-content: space-between;
+                              margin-top: 20px;
+                              a {
+                                    text-decoration: none;
+                                    padding: 15px;
+                                    border-radius: 10px;
+                                    background-color: #f8f8f8;
+                                    border: none;
+                                    width: 45%;
+                                    color: #0d9917;
+                                    font-weight: 600;
+                                    &:hover {
+                                          cursor: pointer;
+                                          background-color: #e2dcdc;
+                                    }
+                              }
+                              button {
+                                    padding: 15px;
+                                    border-radius: 10px;
+                                    background-color: #f8f8f8;
+                                    border: none;
+                                    width: 45%;
+                                    color: #0d9917;
+                                    font-weight: 600;
+                                    &:hover {
+                                          cursor: pointer;
+                                          background-color: #e2dcdc;
+                                    }
+                              }
+                        }
+                  }
+                  @keyframes showModal {
+                        from {
+                              top: -200px;
+                              opacity: 0;
+                        }
+                        to {
+                              top: 0;
+                              opacity: 1;
+                        }
+                  }
+            }
+            .right-content {
+                  img {
+                        width: 100%;
+                        object-fit: cover;
+                  }
+            }
+      }
+}

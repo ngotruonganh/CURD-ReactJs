@@ -1,0 +1,177 @@
+.row {
+      display: flex;
+      flex-wrap: nowrap;
+      .transactions-wrapper {
+            flex: 85%;
+            padding: 40px;
+            display: flex;
+            flex-direction: column;
+            h1 {
+                  font-size: 25px;
+                  width: 100%;
+                  margin-bottom: 25px;
+            }
+            .search-box {
+                  display: flex;
+                  justify-content: space-between;
+                  input {
+                        width: 70%;
+                        padding: 10px 15px;
+                        border-radius: 15px;
+                        color: #929eae;
+                        background-color: #f8f8f8;
+                        border: none;
+                  }
+                  button {
+                        display: flex;
+                        justify-content: space-evenly;
+                        align-items: center;
+                        width: 20%;
+                        border: 2px solid #000000;
+                        font-weight: 600;
+                        color: black;
+                        padding: 10px;
+                        background-color: white;
+                        border-radius: 8px;
+                        text-align: center;
+                        &:hover {
+                              cursor: pointer;
+                              background-color: #929eae;
+                        }
+                  }
+                  .addTransaction {
+                        position: fixed;
+                        top: 0;
+                        bottom: 0;
+                        left: 0;
+                        right: 0;
+                        animation: showModal linear 0.2s;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+
+                        .overlay {
+                              position: absolute;
+                              width: 100%;
+                              height: 100%;
+                              opacity: 0.5;
+                              background-color: #78778b;
+                              z-index: 2;
+                        }
+                        form {
+                              position: relative;
+                              width: 400px;
+                              height: 520px;
+                              border-radius: 10px;
+                              background-color: white;
+                              animation: showModal linear 0.2s;
+                              background-color: rgb(255, 255, 255);
+                              border-radius: 10px;
+                              text-align: center;
+                              margin: 50px auto;
+                              padding: 40px 20px;
+                              z-index: 3;
+
+                              h1 {
+                                    text-align: left;
+                                    font-size: 20px;
+                              }
+                              .input-field {
+                                    margin: 0 auto;
+                                    text-align: left;
+                                    p {
+                                          font-size: 14px;
+                                          color: #78778b;
+                                          margin: 10px 0;
+                                    }
+                                    input,
+                                    select {
+                                          width: 100%;
+                                          height: 40px;
+                                          border: 1px solid #463f3f;
+                                          border-radius: 10px;
+                                          color: black;
+                                          padding-left: 15px;
+                                    }
+                              }
+                              .options {
+                                    display: flex;
+                                    justify-content: space-between;
+                                    margin-top: 25px;
+                                    .cancelled {
+                                          padding: 15px;
+                                          border-radius: 10px;
+                                          background-color: #f8f8f8;
+                                          border: none;
+                                          width: 45%;
+                                          color: black;
+                                          font-weight: 600;
+                                          &:hover {
+                                                cursor: pointer;
+                                                background-color: #e2dcdc;
+                                          }
+                                    }
+                                    .confirmAddTrans {
+                                          padding: 15px;
+                                          border-radius: 10px;
+                                          background-color: #c8ee44;
+                                          border: none;
+                                          width: 45%;
+                                          color: black;
+                                          font-weight: 600;
+                                          &:hover {
+                                                cursor: pointer;
+                                                background-color: #e2dcdc;
+                                          }
+                                    }
+                              }
+
+                              @keyframes showModal {
+                                    from {
+                                          top: -200px;
+                                          opacity: 0;
+                                    }
+                                    to {
+                                          top: 0;
+                                          opacity: 1;
+                                    }
+                              }
+                        }
+                  }
+            }
+            .all-recent-trans {
+                  margin-top: 20px;
+                  padding: 15px;
+                  border-radius: 10px;
+                  width: 100%;
+                  .tables {
+                        table {
+                              width: 100%;
+                              tr {
+                                    border: 1px solid #f5f5f5;
+                                    td {
+                                          border-bottom: 1px solid #f5f5f5;
+                                          padding: 15px 0;
+                                          button {
+                                                border: 1px solid #78778b;
+                                                padding: 15px 20px;
+                                                margin-right: 20px;
+                                                background-color: white;
+                                                border-radius: 8px;
+                                                color: #78778b;
+                                                &:hover {
+                                                      cursor: pointer;
+                                                      background-color: #929eae;
+                                                }
+                                          }
+                                    }
+                                    th {
+                                          color: #929eae;
+                                          text-align: left;
+                                    }
+                              }
+                        }
+                  }
+            }
+      }
+}
