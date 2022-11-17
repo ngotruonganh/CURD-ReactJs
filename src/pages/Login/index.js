@@ -46,7 +46,7 @@ class Login extends React.Component {
               <p>Chào mừng bạn đến với chúng tôi</p>
               <div className="input-field">
                 <p>Email</p>
-                <input type="text" placeholder="Nhập email của bạn" />
+                <input type="email" placeholder="Nhập email của bạn" />
                 {/* show error */}
                 <small></small>
               </div>
@@ -56,9 +56,13 @@ class Login extends React.Component {
                 {/* show error */}
                 <small></small>
               </div>
-              <a onClick={() => this.openModelFogotPassWord()} className="forget-pass">
-                Quên mật khẩu
-              </a>
+              <div className="forget-pass">
+                <a
+                  onClick={() => this.openModelFogotPassWord()}
+                >
+                  Quên mật khẩu
+                </a>
+              </div>
               {this.state.changePass === false ? (
                 <></>
               ) : (
@@ -130,7 +134,7 @@ class Login extends React.Component {
         </article>
 
         <article className="right-content">
-          <div className="Image">
+          <div className="image">
             <img src={backGround} alt="logo-img" />
           </div>
         </article>

@@ -22,6 +22,9 @@ nav {
                         text-decoration: none;
                         font-weight: 600;
                         padding: 10px 16px;
+                        .onHover {
+                              display: none;
+                        }
                   }
                   p {
                         padding-left: 20px;
@@ -35,6 +38,12 @@ nav {
                   border-radius: 8px;
                   color: #1b212d;
                   font-weight: 600;
+                  .offHover {
+                        display: none;
+                  }
+                  .onHover {
+                        display : unset;
+                  }
             }
       }
 }

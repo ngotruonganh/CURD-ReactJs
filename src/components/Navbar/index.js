@@ -3,11 +3,11 @@ import { Link, NavLink } from "react-router-dom";
 import "./Navbar.scss";
 import Logo from "../../assets/images/Logo.png";
 import DashBoardIcon from "../../assets/images/DashBoard.png";
-// import DashBoardNavbarIconHover from "../../assets/images/DashboardNavbarIconHover.png";
+import DashBoardNavbarIconHover from "../../assets/images/DashboardNavbarIconHover.png";
 import TransactionIcon from "../../assets/images/Transaction.png";
-// import TransactionsNavbarIconHover from "../../assets/images/TransactionsNavbarIconHover.png";
+import TransactionsNavbarIconHover from "../../assets/images/TransactionsNavbarIconHover.png";
 import SettingIcon from "../../assets/images/Setting.png";
-// import SettingsNavbarIconHover from "../../assets/images/SettingsNavbarIconHover.png";
+import SettingsNavbarIconHover from "../../assets/images/SettingsNavbarIconHover.png";
 
 class Navbar extends React.Component {
   state = {};
@@ -28,11 +28,11 @@ class Navbar extends React.Component {
                 src={DashBoardIcon}
                 alt="dashboard-icon"
               />
-              {/* <img
+              <img
                 className="onHover"
                 src={DashBoardNavbarIconHover}
                 alt="dashboard-icon-hover"
-              /> */}
+              />
               <p>Tổng quan</p>
             </NavLink>
           </li>
@@ -46,12 +46,11 @@ class Navbar extends React.Component {
                 src={TransactionIcon}
                 alt="transaction-icon"
               />
-              {/* <img
+              <img
                 className="onHover"
                 src={TransactionsNavbarIconHover}
                 alt="dashboard-icon-hover"
-              /> */}
-
+              />
               <p>Giao dịch</p>
             </NavLink>
           </li>
@@ -61,11 +60,11 @@ class Navbar extends React.Component {
               className={({ isActive }) => (isActive ? "active" : undefined)}
             >
               <img className="offHover" src={SettingIcon} alt="setting-icon" />
-              {/* <img
+              <img
                 className="onHover"
                 src={SettingsNavbarIconHover}
                 alt="setting-icon-hover"
-              /> */}
+              />
 
               <p>Cài đặt</p>
             </NavLink>
