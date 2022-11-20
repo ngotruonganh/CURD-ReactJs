@@ -1,0 +1,36 @@
+.recent {
+  border: 1px solid #f5f5f5;
+  border-radius: 10px;
+  padding: 15px;
+  margin-top: 25px;
+}
+.recent-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+.recent-heading a {
+  color: #29a073;
+  font-weight: 600;
+  text-decoration: none;
+}
+.recent-heading a:hover {
+  cursor: pointer;
+  text-decoration: underline;
+}
+.recent .tables table {
+  width: 100%;
+}
+.recent .tables table tr {
+  border: 1px solid #f5f5f5;
+}
+.recent .tables table tr td {
+  border-bottom: 1px solid #f5f5f5;
+  padding: 10px 0;
+}
+.recent .tables table tr th {
+  color: #929eae;
+  margin: 15px 0;
+  text-align: left;
+}/*# sourceMappingURL=testProps.css.map */

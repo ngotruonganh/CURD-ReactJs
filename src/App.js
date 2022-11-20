@@ -3,6 +3,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { publicRoutes } from "./routers";
+import User from "./pages/User";
 
 class App extends React.Component {
   render() {
@@ -20,6 +21,7 @@ class App extends React.Component {
             </Routes>
           </div>
         </BrowserRouter>
+        <User />
         <ToastContainer
           position="top-right"
           autoClose={1200}

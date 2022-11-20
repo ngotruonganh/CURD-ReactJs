@@ -3,7 +3,7 @@ import { toast } from "react-toastify";
 import "./Transactions.scss";
 import Navbar from "../../components/Navbar";
 import AddIcon from "../../assets/images/AddIcon.png";
-import TestProps from "../Dashboard/testProps";
+// import TestProps from "../Dashboard/testProps";
 
 class Transactions extends React.Component {
   state = {
@@ -159,8 +159,8 @@ class Transactions extends React.Component {
   };
 
   render() {
-    let sum = 0;
-    let { time, title, type, amount, listTransactions } = this.state;
+    //     let sum = 0;
+    let { time, title, amount, listTransactions } = this.state;
     return (
       <div className="row">
         <Navbar />
@@ -255,42 +255,40 @@ class Transactions extends React.Component {
                 <tbody>
                   {listTransactions &&
                     listTransactions.length > 0 &&
-                    listTransactions.map((item) => {
+                    listTransactions.map((item, index) => {
                       return (
-                        <>
-                          <tr key={item.id}>
-                            <td>{item.title}</td>
-                            <td>{item.type}</td>
-                            <td>{item.amount}đ</td>
-                            <td>{item.time}</td>
-                            <td>
-                              <button onClick={() => this.onEdit()}>
-                                Chỉnh sửa
-                              </button>
-                              <button onClick={() => this.onDelete(item)}>
-                                Xóa
-                              </button>
-                            </td>
-                          </tr>
-                        </>
+                        <tr key={item.id}>
+                          <td>{item.title}</td>
+                          <td>{item.type}</td>
+                          <td>{item.amount}đ</td>
+                          <td>{item.time}</td>
+                          <td>
+                            <button onClick={() => this.onEdit()}>
+                              Chỉnh sửa
+                            </button>
+                            <button onClick={() => this.onDelete(item)}>
+                              Xóa
+                            </button>
+                          </td>
+                        </tr>
                       );
                     })}
                 </tbody>
               </table>
             </div>
           </article>
-          <TestProps
+          {/* <TestProps
             title={this.state.title}
             amount={amount}
             time={time}
             type={type}
             onClick={() => this.on}
-          />
+          /> */}
 
-          {listTransactions.map((item) => {
+          {/* {listTransactions.map((item) => {
             sum += item.amount;
           })}
-          <h1>Tổng chi tiêu: {sum}</h1>
+          <h1>Tổng chi tiêu: {sum}</h1> */}
         </section>
       </div>
     );

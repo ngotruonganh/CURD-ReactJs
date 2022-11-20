@@ -57,9 +57,7 @@ class Login extends React.Component {
                 <small></small>
               </div>
               <div className="forget-pass">
-                <a
-                  onClick={() => this.openModelFogotPassWord()}
-                >
+                <a onClick={() => this.openModelFogotPassWord()}>
                   Quên mật khẩu
                 </a>
               </div>
@@ -80,6 +78,7 @@ class Login extends React.Component {
                         </div>
                         <button
                           className="getpass"
+                          type="submit"
                           onClick={(e) => this.notPrevent(e)}
                         >
                           Lấy lại mật khẩu
@@ -106,6 +105,7 @@ class Login extends React.Component {
                           <small></small>
                         </div>
                         <button
+                          type="submit"
                           className="getpass"
                           onClick={(e) => this.notPrevent(e)}
                         >

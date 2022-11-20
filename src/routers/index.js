@@ -4,7 +4,6 @@ import Dashboard from "../pages/Dashboard";
 import Transactions from "../pages/Transactions";
 import Settings from "../pages/Settings";
 
-
 const publicRoutes = [
   {
     path: "/",
@@ -19,11 +18,11 @@ const publicRoutes = [
     component: Dashboard,
   },
   {
-  path: "/transactions",
+    path: "/transactions",
     component: Transactions,
   },
   {
-  path: "/settings",
+    path: "/settings",
     component: Settings,
   },
 ];
