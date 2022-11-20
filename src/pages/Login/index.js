@@ -65,18 +65,28 @@ class Login extends React.Component {
       password: this.state.password,
     };
     this.addUser(user);
+    this.setState({
+      email: "",
+      password: "",
+    });
+    toast.success("Đăng nhập thành công");
   };
 
   addUser = (user) => {
     this.setState({
       userAccount: [...this.state.userAccount, user],
     });
-    toast.success("Đăng nhập thành công");
-    this.setState({
-      email: "",
-      password: "",
-    });
   };
+
+  getPhone(e) {
+    e.preventDefault();
+    toast.success("đã gửi mã đến số điện thoại của bạn");
+  }
+
+  getEmail(e) {
+    e.preventDefault();
+    toast.success("đã gửi mã đến email của bạn");
+  }
 
   render() {
     let { email, password } = this.state;
@@ -110,6 +120,7 @@ class Login extends React.Component {
                     placeholder="*******"
                     value={password}
                     onChange={(event) => this.handleOnChangePassword(event)}
+                    autoComplete="on"
                   />
                   <span onClick={() => this.showHidePassword()}>
                     {this.state.isShowPassword ? (
@@ -123,9 +134,9 @@ class Login extends React.Component {
                 <small></small>
               </div>
               <div className="forgot-password">
-                <a onClick={() => this.openModelForgotPassword()}>
+                <p onClick={() => this.openModelForgotPassword()}>
                   Quên mật khẩu?
-                </a>
+                </p>
               </div>
               {this.state.forgotPass === false ? (
                 <></>
@@ -134,10 +145,10 @@ class Login extends React.Component {
                   {this.state.changeOptions === false ? (
                     <div className="modal">
                       <div className="overlay"></div>
-                      <form>
+                      <form action="#" method="#">
                         <h1> Quên mật khẩu </h1>
                         <div className="input-field">
-                          <p>Email</p>
+                          <label>Email</label>
                           <input type="text" placeholder="Nhập email của bạn" />
                           {/* show error */}
                           <small></small>
@@ -145,7 +156,7 @@ class Login extends React.Component {
                         <button
                           className="get-pass-by-email"
                           type="submit"
-                          onClick={(e) => this.notPrevent(e)}
+                          onClick={(e) => this.getEmail(e)}
                         >
                           Lấy lại mật khẩu
                         </button>
@@ -153,16 +164,20 @@ class Login extends React.Component {
                           <button onClick={(e) => this.onChangeOptions(e)}>
                             Phone
                           </button>
-                          <button onClick={() => this.openModel()}>Đóng</button>
+                          <button
+                            onClick={() => this.openModelForgotPassword()}
+                          >
+                            Đóng
+                          </button>
                         </div>
                       </form>
                     </div>
                   ) : (
                     <div className="modal">
-                      <form>
+                      <form action="#" method="#">
                         <h1> Quên mật khẩu </h1>
                         <div className="input-field">
-                          <p>Số điện thoại</p>
+                          <label>Số điện thoại</label>
                           <input
                             type="text"
                             placeholder="Nhập số điện thoại của bạn"
@@ -173,7 +188,7 @@ class Login extends React.Component {
                         <button
                           type="submit"
                           className="get-pass-by-phone"
-                          onClick={(e) => this.notPrevent(e)}
+                          onClick={(e) => this.getPhone(e)}
                         >
                           Lấy lại mật khẩu
                         </button>
@@ -181,7 +196,11 @@ class Login extends React.Component {
                           <button onClick={(e) => this.onChangeOptions(e)}>
                             Email
                           </button>
-                          <button onClick={() => this.openModel()}>Đóng</button>
+                          <button
+                            onClick={() => this.openModelForgotPassword()}
+                          >
+                            Đóng
+                          </button>
                         </div>
                       </form>
                     </div>
@@ -189,7 +208,7 @@ class Login extends React.Component {
                 </>
               )}
               <Link
-                to="#"
+                to="/dashboard"
                 type="submit"
                 className="btn-log-in"
                 onClick={(e) => this.handleLogin(e)}

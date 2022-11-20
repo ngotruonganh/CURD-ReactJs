@@ -34,9 +34,6 @@
                                           height: 48px;
                                           border: 1px solid #f2f2f2;
                                           border-radius: 10px;
-                                          &:focus {
-                                                
-                                          }
                                     }
                                     svg:not(:root).svg-inline--fa,
                                     svg:not(:host).svg-inline--fa {
@@ -51,7 +48,7 @@
                               }
                         }
                         .forgot-password {
-                              a {
+                              p {
                                     float: right;
                                     margin: 12px 0;
                                     text-decoration: none;
@@ -99,18 +96,11 @@
             }
             .modal {
                   position: fixed;
-                  // top: 10%;
-                  // left: 50%;
-                  // transform: translateX(-50%);
-                  // background-color: white;
-                  // border-radius: 10px;
-                  // animation: showModal linear 0.2s;
                   top: 0;
                   bottom: 0;
                   left: 0;
                   right: 0;
                   animation: showModal linear 0.2s;
-
                   .overlay {
                         position: absolute;
                         width: 100%;
@@ -136,6 +126,7 @@
                         h1 {
                               text-align: left;
                               font-size: 20px;
+                              margin-bottom: 25px;
                         }
                         .input-field {
                               margin: 0 auto;

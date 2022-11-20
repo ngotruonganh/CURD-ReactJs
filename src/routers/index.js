@@ -4,6 +4,7 @@ import Dashboard from "../pages/Dashboard";
 import Transactions from "../pages/Transactions";
 import Settings from "../pages/Settings";
 import DetailUser from "../pages/Users/DetailUser";
+import User from "../pages/Users/User";
 
 const publicRoutes = [
   {
@@ -26,6 +27,10 @@ const publicRoutes = [
     path: "/settings",
     component: Settings,
   },
+  {
+      path: "/user",
+      component: User,
+    },
   {
     path: "/user/:id",
     component: DetailUser,

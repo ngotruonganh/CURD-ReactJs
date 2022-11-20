@@ -8,10 +8,7 @@ class User extends React.Component {
   };
 
   async componentDidMount() {
-    //     axios.get("https://reqres.in/api/users?page=2").then((res) => {
-    //       console.log(res.data);
-
-    let res = await axios.get("https://reqres.in/api/users?page=2");
+    let res = await axios.get("http://localhost:8080/api/v1/user");
     console.log(res);
     this.setState({
       listUser: res && res.data && res.data.data ? res.data.data : [],
@@ -26,7 +23,7 @@ class User extends React.Component {
           listUser.map((item, index) => {
             return (
               <div key={item.id}>
-                {index + 1} - {item.last_name} -{" "}
+                {index + 1} - {item.last_name} - {item.email} -{" "}
                 <Link to="/user/{item.id}">detail</Link>
               </div>
             );
