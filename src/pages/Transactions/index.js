@@ -3,7 +3,6 @@ import { toast } from "react-toastify";
 import "./Transactions.scss";
 import Navbar from "../../components/Navbar";
 import AddIcon from "../../assets/images/AddIcon.png";
-// import TestProps from "../Dashboard/testProps";
 
 class Transactions extends React.Component {
   state = {
@@ -277,18 +276,6 @@ class Transactions extends React.Component {
               </table>
             </div>
           </article>
-          {/* <TestProps
-            title={this.state.title}
-            amount={amount}
-            time={time}
-            type={type}
-            onClick={() => this.on}
-          /> */}
-
-          {/* {listTransactions.map((item) => {
-            sum += item.amount;
-          })}
-          <h1>Tổng chi tiêu: {sum}</h1> */}
         </section>
       </div>
     );
