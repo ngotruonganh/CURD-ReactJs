@@ -1,24 +1,28 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { toast } from "react-toastify";
 import "./Login.scss";
+
+// image
 import Logo from "../../assets/images/Logo.png";
 import backGround from "../../assets/images/backGround.png";
 
+// fontawesome
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faEye } from "@fortawesome/free-solid-svg-icons";
+
 class Login extends React.Component {
   state = {
-    changePass: false,
+    email: "",
+    password: "",
+    userAccount: [{ email: "", password: "" }],
+    forgotPass: false,
     changeOptions: false,
-    opacityPage: false,
-  };
-  openModelFogotPassWord = () => {
-    this.setState({
-      changePass: !this.state.changePass,
-    });
   };
 
-  opacityScreen = () => {
+  openModelForgotPassword = () => {
     this.setState({
-      opacityPage: !this.state.opacityPage,
+      forgotPass: !this.state.forgotPass,
     });
   };
 
@@ -26,15 +30,50 @@ class Login extends React.Component {
     e.preventDefault();
     this.setState({
       changeOptions: !this.state.changeOptions,
-      opacityPage: !this.state.opacityPage,
     });
   };
-  notPrevent = (e) => {
-    e.preventDefault();
+
+  handleOnChangeEmail = (event) => {
+    this.setState({
+      email: event.target.value,
+    });
   };
+
+  handleOnChangePassword = (event) => {
+    this.setState({
+      password: event.target.value,
+    });
+  };
+
+  handleLogin = (e) => {
+    e.preventDefault();
+    if (!this.state.email || !this.state.password) {
+      toast.error("Vui lòng điền đầy đủ thông tin");
+      return;
+    }
+    let user = {
+      id: Math.floor(Math.random() * 1001),
+      email: this.state.email,
+      password: this.state.password,
+    };
+    this.addUser(user);
+  };
+
+  addUser = (user) => {
+    this.setState({
+      userAccount: [...this.state.userAccount, user],
+    });
+    toast.success("Đăng nhập thành công");
+    this.setState({
+      email: "",
+      password: "",
+    });
+  };
+
   render() {
+    let { email, password } = this.state;
     return (
-      <section className="LoginPape hide">
+      <section className="LoginPage hide">
         <article className="left-content">
           <div className="logo">
             <img src={Logo} alt="logo" />
@@ -45,23 +84,34 @@ class Login extends React.Component {
               <h1>MonoLeak</h1>
               <p>Chào mừng bạn đến với chúng tôi</p>
               <div className="input-field">
-                <p>Email</p>
-                <input type="email" placeholder="Nhập email của bạn" />
+                <label>Email</label>
+                <input
+                  type="email"
+                  placeholder="Nhập email của bạn"
+                  value={email}
+                  onChange={(event) => this.handleOnChangeEmail(event)}
+                />
                 {/* show error */}
                 <small></small>
               </div>
               <div className="input-field">
-                <p>Mật khẩu</p>
-                <input type="password" placeholder="*******" />
+                <label>Mật khẩu</label>
+                <input
+                  type="password"
+                  placeholder="*******"
+                  value={password}
+                  onChange={(event) => this.handleOnChangePassword(event)}
+                />
+                {/* <FontAwesomeIcon icon={faEye} /> */}
                 {/* show error */}
                 <small></small>
               </div>
-              <div className="forget-pass">
-                <a onClick={() => this.openModelFogotPassWord()}>
-                  Quên mật khẩu
+              <div className="forgot-password">
+                <a onClick={() => this.openModelForgotPassword()}>
+                  Quên mật khẩu?
                 </a>
               </div>
-              {this.state.changePass === false ? (
+              {this.state.forgotPass === false ? (
                 <></>
               ) : (
                 <>
@@ -122,7 +172,12 @@ class Login extends React.Component {
                   )}
                 </>
               )}
-              <Link to="/dashboard" type="submit" className="btn-log-in">
+              <Link
+                to="#"
+                type="submit"
+                className="btn-log-in"
+                onClick={(e) => this.handleLogin(e)}
+              >
                 Đăng nhập
               </Link>
               <span className="sign-up-link">

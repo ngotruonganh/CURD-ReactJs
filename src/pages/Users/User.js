@@ -1,5 +1,6 @@
 import React from "react";
 import axios from "axios";
+import { Link } from "react-router-dom";
 
 class User extends React.Component {
   state = {
@@ -26,6 +27,7 @@ class User extends React.Component {
             return (
               <div key={item.id}>
                 {index + 1} - {item.last_name}
+                <Link to="/user/{item.id}">detail</Link>
               </div>
             );
           })}

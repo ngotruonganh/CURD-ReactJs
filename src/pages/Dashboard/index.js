@@ -2,6 +2,8 @@ import React from "react";
 import { Link } from "react-router-dom";
 import "./Dashboard.scss";
 import Navbar from "../../components/Navbar";
+import User from "../Users/User";
+
 import Value from "../../assets/images/Value.png";
 import ValueHover from "../../assets/images/ValueHover.png";
 import Value2 from "../../assets/images/Value2.png";
@@ -28,7 +30,7 @@ class Dashboard extends React.Component {
       },
       {
         id: "3",
-        name: "Cho gái",
+        name: "Mua sắm",
         type: "Chuyển tiền",
         amountOfMonney: 100000,
         time: "1/6/2021 10:00AM",
@@ -114,6 +116,7 @@ class Dashboard extends React.Component {
                 </table>
               </div>
             </div>
+            <User />
           </article>
 
           <div className="right-wrap">

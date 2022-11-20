@@ -3,6 +3,7 @@ import SignUp from "../pages/SignUp";
 import Dashboard from "../pages/Dashboard";
 import Transactions from "../pages/Transactions";
 import Settings from "../pages/Settings";
+import DetailUser from "../pages/Users/DetailUser";
 
 const publicRoutes = [
   {
@@ -24,6 +25,10 @@ const publicRoutes = [
   {
     path: "/settings",
     component: Settings,
+  },
+  {
+    path: "/user/:id",
+    component: DetailUser,
   },
 ];
 
