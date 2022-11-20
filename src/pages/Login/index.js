@@ -113,9 +113,9 @@ class Login extends React.Component {
                   />
                   <span onClick={() => this.showHidePassword()}>
                     {this.state.isShowPassword ? (
-                      <FontAwesomeIcon icon={faEyeSlash} />
-                    ) : (
                       <FontAwesomeIcon icon={faEye} />
+                    ) : (
+                      <FontAwesomeIcon icon={faEyeSlash} />
                     )}
                   </span>
                 </div>
