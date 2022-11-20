@@ -10,6 +10,7 @@ import backGround from "../../assets/images/backGround.png";
 // fontawesome
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEye } from "@fortawesome/free-solid-svg-icons";
+import { faEyeSlash } from "@fortawesome/free-solid-svg-icons";
 
 class Login extends React.Component {
   state = {
@@ -18,11 +19,18 @@ class Login extends React.Component {
     userAccount: [{ email: "", password: "" }],
     forgotPass: false,
     changeOptions: false,
+    isShowPassword: false,
   };
 
   openModelForgotPassword = () => {
     this.setState({
       forgotPass: !this.state.forgotPass,
+    });
+  };
+
+  showHidePassword = () => {
+    this.setState({
+      isShowPassword: !this.state.isShowPassword,
     });
   };
 
@@ -96,13 +104,21 @@ class Login extends React.Component {
               </div>
               <div className="input-field">
                 <label>Mật khẩu</label>
-                <input
-                  type="password"
-                  placeholder="*******"
-                  value={password}
-                  onChange={(event) => this.handleOnChangePassword(event)}
-                />
-                <FontAwesomeIcon icon={faEye} />
+                <div className="custom-input">
+                  <input
+                    type={this.state.isShowPassword ? "text" : "password"}
+                    placeholder="*******"
+                    value={password}
+                    onChange={(event) => this.handleOnChangePassword(event)}
+                  />
+                  <span onClick={() => this.showHidePassword()}>
+                    {this.state.isShowPassword ? (
+                      <FontAwesomeIcon icon={faEyeSlash} />
+                    ) : (
+                      <FontAwesomeIcon icon={faEye} />
+                    )}
+                  </span>
+                </div>
                 {/* show error wrong password */}
                 <small></small>
               </div>
