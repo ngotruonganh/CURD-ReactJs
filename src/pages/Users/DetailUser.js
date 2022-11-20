@@ -3,10 +3,9 @@ import React from "react";
 
 class DetailUser extends React.Component {
   render() {
-    return <h1> Ahihi </h1>;
+    return <h1> Hello from detail users </h1>;
   }
 }
 
 // export default withRouter(DetailUser);
 export default DetailUser;
-

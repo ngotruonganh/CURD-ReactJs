@@ -102,7 +102,7 @@ class Login extends React.Component {
                   value={password}
                   onChange={(event) => this.handleOnChangePassword(event)}
                 />
-                {/* <FontAwesomeIcon icon={faEye} /> */}
+                <FontAwesomeIcon icon={faEye} />
                 {/* show error wrong password */}
                 <small></small>
               </div>

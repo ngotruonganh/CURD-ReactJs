@@ -26,7 +26,7 @@ class User extends React.Component {
           listUser.map((item, index) => {
             return (
               <div key={item.id}>
-                {index + 1} - {item.last_name}
+                {index + 1} - {item.last_name} -{" "}
                 <Link to="/user/{item.id}">detail</Link>
               </div>
             );
