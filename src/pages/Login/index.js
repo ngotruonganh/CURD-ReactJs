@@ -73,7 +73,7 @@ class Login extends React.Component {
   render() {
     let { email, password } = this.state;
     return (
-      <section className="LoginPage hide">
+      <section className="login-page">
         <article className="left-content">
           <div className="logo">
             <img src={Logo} alt="logo" />
@@ -127,7 +127,7 @@ class Login extends React.Component {
                           <small></small>
                         </div>
                         <button
-                          className="getpass"
+                          className="get-pass-by-email"
                           type="submit"
                           onClick={(e) => this.notPrevent(e)}
                         >
@@ -156,7 +156,7 @@ class Login extends React.Component {
                         </div>
                         <button
                           type="submit"
-                          className="getpass"
+                          className="get-pass-by-phone"
                           onClick={(e) => this.notPrevent(e)}
                         >
                           Lấy lại mật khẩu

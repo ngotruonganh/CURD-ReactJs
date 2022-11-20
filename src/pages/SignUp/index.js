@@ -7,7 +7,7 @@ import backGround from "../../assets/images/backGround.png";
 class SignUp extends React.Component {
   render() {
     return (
-      <section className="SignupPage">
+      <section className="signup-page">
         <article className="left-content">
           <div className="logo">
             <img src={Logo} alt="logo" />
@@ -18,20 +18,20 @@ class SignUp extends React.Component {
               <h1>Tạo tài khoản mới</h1>
               <p>Bạn cần điền đầy đủ thông tin để tiếp tục</p>
               <div className="input-field">
-                <p>Họ và tên</p>
+                <lable>Họ và tên</lable>
                 <input type="text" placeholder="Nhập họ và tên" />
               </div>
               <div className="input-field">
-                <p>Email</p>
+                <lable>Email</lable>
                 <input type="email" placeholder="Nhập Email" />
               </div>
               <div className="input-field">
-                <p>Mật khẩu</p>
+                <lable>Mật khẩu</lable>
                 <input type="password" placeholder="*******" />
               </div>
-              <Link to="/" type="submit" className="btn-sign-up">
+              <button type="submit" className="btn-sign-up" va>
                 Đăng kí
-              </Link>
+              </button>
               <span className="sign-in-link">
                 Bạn đã có tài khoản?
                 <Link to="/">&nbsp;Đăng nhập</Link>
