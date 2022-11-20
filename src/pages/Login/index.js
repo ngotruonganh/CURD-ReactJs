@@ -91,7 +91,7 @@ class Login extends React.Component {
                   value={email}
                   onChange={(event) => this.handleOnChangeEmail(event)}
                 />
-                {/* show error */}
+                {/* show error wrong email*/}
                 <small></small>
               </div>
               <div className="input-field">
@@ -103,7 +103,7 @@ class Login extends React.Component {
                   onChange={(event) => this.handleOnChangePassword(event)}
                 />
                 {/* <FontAwesomeIcon icon={faEye} /> */}
-                {/* show error */}
+                {/* show error wrong password */}
                 <small></small>
               </div>
               <div className="forgot-password">
