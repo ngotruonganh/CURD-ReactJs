@@ -207,14 +207,16 @@ class Login extends React.Component {
                   )}
                 </>
               )}
-              <Link
-                to="/dashboard"
-                type="submit"
-                className="btn-log-in"
-                onClick={(e) => this.handleLogin(e)}
-              >
-                Đăng nhập
-              </Link>
+              <div>
+                <Link
+                  to="/dashboard"
+                  type="submit"
+                  className="btn-log-in"
+                  onClick={(e) => this.handleLogin(e)}
+                >
+                  Đăng nhập
+                </Link>
+              </div>
               <span className="sign-up-link">
                 Bạn chưa có tài khoản?
                 <Link to="/signup">&nbsp;Đăng kí miễn phí</Link>
