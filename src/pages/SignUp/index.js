@@ -18,15 +18,15 @@ class SignUp extends React.Component {
               <h1>Tạo tài khoản mới</h1>
               <p>Bạn cần điền đầy đủ thông tin để tiếp tục</p>
               <div className="input-field">
-                <lable>Họ và tên</lable>
+                <label>Họ và tên</label>
                 <input type="text" placeholder="Nhập họ và tên" />
               </div>
               <div className="input-field">
-                <lable>Email</lable>
+                <label>Email</label>
                 <input type="email" placeholder="Nhập Email" />
               </div>
               <div className="input-field">
-                <lable>Mật khẩu</lable>
+                <label>Mật khẩu</label>
                 <input type="password" placeholder="*******" />
               </div>
               <button type="submit" className="btn-sign-up" va>
