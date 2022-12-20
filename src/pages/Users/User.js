@@ -8,7 +8,8 @@ class User extends React.Component {
   };
 
   async componentDidMount() {
-    let res = await axios.get("https://reqres.in/api/users?page=2");
+    let res = await axios.get("http://localhost:8080/api/v1/user");
+    console.log(res);
     this.setState({
       listUser: res && res.data && res.data.data ? res.data.data : [],
     });
@@ -22,6 +23,8 @@ class User extends React.Component {
           listUser.map((item, index) => {
             return (
               <div key={index}>
+                {item.email}
+                {item.password}
                 {item.id} - {item.first_name} - {item.last_name} -{" "}
                 <img src={item.avatar} alt="avatar"></img>
                 <Link to="/user/{item.id}">detail</Link>
